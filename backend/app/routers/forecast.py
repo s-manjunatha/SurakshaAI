@@ -1,6 +1,3 @@
-import sys, os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", ".."))
-
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import text
@@ -11,7 +8,7 @@ from app.auth import get_current_user
 from app.models import User
 from app.schemas import ForecastPoint, RegionRisk
 
-from services.forecasting.forecast_service import forecast_service
+from app.services.forecasting.forecast_service import forecast_service
 
 router = APIRouter(prefix="/forecast", tags=["Crime Forecasting"])
 

@@ -1,6 +1,3 @@
-import sys, os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", ".."))
-
 from uuid import UUID
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import Response
@@ -10,8 +7,8 @@ from sqlalchemy import select
 from app.database import get_db
 from app.auth import get_current_user
 from app.models import User, FIR, Evidence, PoliceStation, Location
-from services.ai.groq_service import groq_service
-from services.reports.pdf_service import pdf_service
+from app.services.ai.groq_service import groq_service
+from app.services.reports.pdf_service import pdf_service
 
 router = APIRouter(prefix="/reports", tags=["PDF Reports"])
 

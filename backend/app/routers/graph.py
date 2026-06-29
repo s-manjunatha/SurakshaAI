@@ -1,6 +1,3 @@
-import sys, os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", ".."))
-
 from uuid import UUID
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -11,7 +8,7 @@ from app.auth import get_current_user
 from app.models import User, FIRCriminal, Criminal
 from app.schemas import GraphResponse, GraphNode, GraphEdge
 
-from services.graph.graph_service import graph_service
+from app.services.graph.graph_service import graph_service
 
 router = APIRouter(prefix="/graph", tags=["Network Analysis"])
 
