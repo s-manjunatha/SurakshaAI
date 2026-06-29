@@ -1,0 +1,31 @@
+{
+  "project_name": "SurakshAI",
+  "project_version": "1.0.0",
+  "description": "AI-Powered Crime Intelligence Platform",
+  "appsail": {
+    "surakshai-api": {
+      "source": "../../backend",
+      "build": {
+        "type": "python",
+        "version": "3.11"
+      },
+      "run": {
+        "command": "uvicorn app.main:app --host 0.0.0.0 --port 9000"
+      },
+      "memory": 1024,
+      "timeout": 120
+    }
+  },
+  "client": {
+    "surakshai-web": {
+      "source": "../../frontend",
+      "build": {
+        "type": "nodejs",
+        "version": "20"
+      },
+      "run": {
+        "command": "npm start"
+      }
+    }
+  }
+}
